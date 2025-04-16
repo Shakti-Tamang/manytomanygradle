@@ -46,7 +46,13 @@ public class Student {
     private String faculty;
     private String batch;
 
-    @ManyToMany(mappedBy = "studentList", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+
+//     CascadeType.PERSIST: When you save the parent entity, the associated child entities are also saved automatically.
+
+// CascadeType.MERGE: When you update (merge) the parent entity, the changes in associated child entities are also updated automatically.
+
+    @ManyToMany(mappedBy = "studentList", cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REMOVE})
+    
     @JsonIgnoreProperties("studentList")
     private List<Course> courseList = new ArrayList<>();
 
