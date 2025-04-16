@@ -40,8 +40,10 @@ public class CourseServiceImpl  implements CourseService{
   List<Student> attachedStudents = new ArrayList<>();
         if(course.getStudentList()!=null){
       for(Student li:course.getStudentList()){
-          attachedStudents.add(li); 
+
           li.getCourseList().add(course);
+
+          attachedStudents.add(li); 
       }
     }
     course.setStudentList(attachedStudents);
