@@ -26,8 +26,9 @@ public class CourseServiceImpl  implements CourseService{
 
     @Override
     public void saveCourse(Course course) {
- 
 
+
+        if(course.getStudentList()!=null){
       for(Student li:course.getStudentList()){
           course.getStudentList().add(li);
 
@@ -35,10 +36,8 @@ public class CourseServiceImpl  implements CourseService{
 
          repo.save(li);
       }
-
+    }
       courseRepo.save(course);
-
-
     }
 
 }
