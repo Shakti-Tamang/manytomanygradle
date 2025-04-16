@@ -24,19 +24,27 @@ public class CourseServiceImpl  implements CourseService{
 
     }
 
+
+
+//     Loops through incoming studentList (only contains studentId).
+
+// Fetches each student from DB using studentId.
+
+// Adds the new course to each student's courseList (maintains bidirectional link).
+
+// Finally, sets the full student list to the course and saves it.
+
     @Override
     public void saveCourse(Course course) {
 
-
+  List<Student> attachedStudents = new ArrayList<>();
         if(course.getStudentList()!=null){
       for(Student li:course.getStudentList()){
-          course.getStudentList().add(li);
-
+          attachedStudents.add(li); 
           li.getCourseList().add(course);
-
-         repo.save(li);
       }
     }
+    course.setStudentList(attachedStudents);
       courseRepo.save(course);
     }
 
