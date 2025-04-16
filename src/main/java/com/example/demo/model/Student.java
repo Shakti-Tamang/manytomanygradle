@@ -6,6 +6,7 @@ import java.util.List;
 import org.hibernate.annotations.ManyToAny;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.annotation.Generated;
 import jakarta.persistence.CascadeType;
@@ -14,6 +15,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -47,4 +49,8 @@ public class Student {
     @ManyToMany(mappedBy = "studentList", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JsonIgnoreProperties("studentList")
     private List<Course> courseList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "student",cascade = CascadeType.ALL)
+    @JsonManagedReference("usersProduct")
+    private List<Product>productList=new ArrayList<>();
 }
