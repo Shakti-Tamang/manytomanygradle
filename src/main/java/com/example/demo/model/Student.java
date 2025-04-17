@@ -52,11 +52,17 @@ public class Student {
 // CascadeType.MERGE: When you update (merge) the parent entity, the changes in associated child entities are also updated automatically.
 
     @ManyToMany(mappedBy = "studentList", cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REMOVE})
-    
     @JsonIgnoreProperties("studentList")
     private List<Course> courseList = new ArrayList<>();
 
     @OneToMany(mappedBy = "student",cascade = CascadeType.ALL)
     @JsonManagedReference("usersProduct")
     private List<Product>productList=new ArrayList<>();
+
+
+    @ManyToMany(mappedBy = "students", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JsonIgnoreProperties("students") // matches List<Student> students in ClassRoom
+    private List<ClassRoom> classRoomList = new ArrayList<>();
+    
+
 }
