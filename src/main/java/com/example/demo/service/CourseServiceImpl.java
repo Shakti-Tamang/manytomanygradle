@@ -24,8 +24,6 @@ public class CourseServiceImpl  implements CourseService{
 
     }
 
-
-
 //     Loops through incoming studentList (only contains studentId).
 
 // Fetches each student from DB using studentId.
@@ -33,6 +31,23 @@ public class CourseServiceImpl  implements CourseService{
 // Adds the new course to each student's courseList (maintains bidirectional link).
 
 // Finally, sets the full student list to the course and saves it.
+
+
+// {
+//   "courseTile": "Java Programming",
+//   "courseCode": "JAVA101",
+//   "courseDescription": "Introduction to Java fundamentals.",
+//   "studentList": [
+//     {
+//       "studentId": 1
+//     },
+//     {
+//       "studentId": 2
+//     }
+//   ]
+// }
+
+
 
     @Override
     public void saveCourse(Course course) {
@@ -48,6 +63,12 @@ public class CourseServiceImpl  implements CourseService{
     }
     course.setStudentList(attachedStudents);
       courseRepo.save(course);
+    }
+
+    @Override
+    public List<Course> getAllCourses() {
+    List<Course>lists=courseRepo.findAllCourseWithStudent();
+    return lists.isEmpty()? new ArrayList<>():lists;
     }
 
 }

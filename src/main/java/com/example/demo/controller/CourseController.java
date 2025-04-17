@@ -1,7 +1,11 @@
 package com.example.demo.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,6 +30,13 @@ public class CourseController {
     courseService.saveCourse(course);
 
     return ResponseEntity.ok("succeedully saved course");
+    }
+
+    @GetMapping("/getAll")
+    public ResponseEntity<List<Course>> getAllCourses(){
+        List<Course>list=courseService.getAllCourses();
+
+        return ResponseEntity.ok(list);
     }
     
 }
