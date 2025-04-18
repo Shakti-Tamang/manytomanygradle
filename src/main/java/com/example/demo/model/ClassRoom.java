@@ -1,8 +1,10 @@
 package com.example.demo.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -23,7 +25,12 @@ import lombok.Setter;
 @Builder
 @Getter
 @Setter
-public class ClassRoom {
+
+
+// @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, property = "@class")
+// @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
+
+public class ClassRoom implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
