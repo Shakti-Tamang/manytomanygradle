@@ -2,6 +2,7 @@ package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 
 
 
@@ -10,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 //  request would succeed when making a CORS preflighted request. A client can specify a URL 
 //  with this method, or an asterisk (*) to refer to the entire server.
 @SpringBootApplication
+@EnableCaching
 public class DemoApplication {
 
 	public static void main(String[] args) {

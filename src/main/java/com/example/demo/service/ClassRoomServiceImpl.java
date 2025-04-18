@@ -3,6 +3,8 @@ package com.example.demo.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.model.ClassRoom;
@@ -39,6 +41,13 @@ public class ClassRoomServiceImpl implements ClassRoomService {
          
     }
     classRoomRepo.save(classRoom);
+}
+
+@Cacheable(value = "classroomCache", key = "'StudentKycCache'")
+@Override
+public List<ClassRoom> getAllClassRoom() {
+    List<ClassRoom> list = classRoomRepo.findAllClasssRoomStudent();
+    return list.isEmpty() ? new ArrayList<>() : list;
 }
 
 }
