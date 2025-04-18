@@ -11,7 +11,7 @@ import com.example.demo.model.ClassRoom;
 @Repository
 public interface ClassRoomRepo extends JpaRepository<ClassRoom, Long> {
 
-    @Query("SELECT c FROM ClassRoom c"+"JOIN FETCH c.students")
+    @Query("SELECT c FROM ClassRoom c "+ "JOIN FETCH c.students s")
 
     public List<ClassRoom> findAllClasssRoomStudent();
 
