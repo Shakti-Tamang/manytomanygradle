@@ -9,4 +9,6 @@ public interface ClassRoomService {
 
     public List<ClassRoom>getAllClassRoom();
 
+    public void deleteById(Long id);
+
 }

@@ -50,4 +50,9 @@ public List<ClassRoom> getAllClassRoom() {
     return list.isEmpty() ? new ArrayList<>() : list;
 }
 
+@Override
+public void deleteById(Long id) {
+classRoomRepo.deleteById(id);
+}
+
 }
