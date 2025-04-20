@@ -5,6 +5,8 @@ import org.springframework.http.ResponseEntity;
 
 import com.example.demo.model.Student;
 import com.example.demo.service.SaveStudent;
+
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,6 +27,15 @@ public class NewStudent {
 
         return ResponseEntity.ok("successfully saved user");
     }
+
+    @GetMapping("/getTotalNumberOfStudent")
+public ResponseEntity<Long> getMethodName() {
+
+    Long  count=save.getTotalUserCount();
+
+    return ResponseEntity.ok(count);
+    
+}
 
     
 }
