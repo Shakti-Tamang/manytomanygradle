@@ -1,0 +1,26 @@
+type Query{
+allPlayers:[Players]
+getPlayers(playerId:Int):Players
+}
+
+
+# === ENUM ===
+enum Team {
+  CSK
+  MI
+  RCB
+  KKR
+}
+
+# === TYPE ===
+type Players {
+  id: ID!
+  name: String
+  team: Team
+  age: Int
+  address: String
+  height: Float
+  email: String
+}
+
+

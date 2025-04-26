@@ -28,6 +28,13 @@ import org.springframework.cache.annotation.EnableCaching;
 
 // for example  if the same endpoint accessed by the Desktop app and Mobile 
 // But if desktop app want different response it send query to server and through graphql get final output
+
+
+// there are three main phases descibe data 
+
+// set query 
+
+// get predectable result
 @SpringBootApplication
 @EnableCaching
 public class DemoApplication {

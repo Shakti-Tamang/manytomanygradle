@@ -19,6 +19,7 @@ public class ClassRoomServiceImpl implements ClassRoomService {
     
 
     public ClassRoomServiceImpl(ClassRoomRepo classRoomRepo){
+        
         this.classRoomRepo=classRoomRepo;
     }
 
