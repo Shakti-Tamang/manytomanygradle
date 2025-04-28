@@ -1,3 +1,7 @@
+type Mutation{
+createPlayer(player1:playerInput):Players
+}
+
 type Query{
 allPlayers:[Players]
 getPlayers(playerId:Long):Players
@@ -15,6 +19,14 @@ enum Team {
 # === TYPE ===
 type Players {
   id: ID!
+  name: String
+  team: Team
+  age: Int
+  address: String
+  height: Float
+  email: String
+}
+input playerInput{
   name: String
   team: Team
   age: Int
