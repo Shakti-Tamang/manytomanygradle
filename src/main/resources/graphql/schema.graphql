@@ -1,6 +1,6 @@
 type Query{
 allPlayers:[Players]
-getPlayers(playerId:Int):Players
+getPlayers(playerId:Long):Players
 }
 
 
