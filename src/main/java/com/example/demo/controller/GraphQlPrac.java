@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.GraphqlDto.playerInput;
 import com.example.demo.model.Players;
 import com.example.demo.service.PlyerService;
 
@@ -30,7 +31,7 @@ public GraphQlPrac(PlyerService plyerService){
 }
 
 @PostMapping("/savePlyr")
-public ResponseEntity<String> savePlayer(@RequestBody  Players players ) {
+public ResponseEntity<String> savePlayer(@RequestBody  playerInput players ) {
 
 
     plyerService.savePlayer(players);

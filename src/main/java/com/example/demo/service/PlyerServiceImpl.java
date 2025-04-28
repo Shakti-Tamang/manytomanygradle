@@ -38,22 +38,27 @@ public class PlyerServiceImpl implements PlyerService {
     @MutationMapping("createPlayer")
     @Override
     public void savePlayer(@Argument playerInput players) {
-
         try{
-     
-
-    
+         
+            Players player=convertToEntity(players);
     // String a="";
 // System.out.println(a.compareTo("skjdksd"));
-
-
-playerRepo.save(players); 
-
+playerRepo.save(player); 
         }
         catch(Exception ex){
 
             throw new RuntimeException("error"+ex.getMessage());
         }
+    }
+    private Players convertToEntity(playerInput input) {
+        Players player = new Players();
+        player.setName(input.getName());
+        player.setTeam(input.getTeam());
+        player.setAge(input.getAge());
+        player.setAddress(input.getAddress());
+        player.setHeight(input.getHeight());
+        player.setEmail(input.getEmail());
+        return player;
     }
 
     @QueryMapping("getPlayers")
