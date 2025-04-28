@@ -17,7 +17,6 @@ import lombok.Setter;
 @NoArgsConstructor
 public class playerInput {
 
-    
     private String name;
 
 

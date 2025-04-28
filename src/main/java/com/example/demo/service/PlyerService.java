@@ -9,7 +9,7 @@ import com.example.demo.model.Players;
 
 public interface PlyerService {
 
-    public void savePlayer(playerInput players);
+    public Players savePlayer(playerInput players);
 
     public List<Players>getAllPlayers();
 

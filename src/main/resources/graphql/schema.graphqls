@@ -1,0 +1,34 @@
+type Mutation {
+  createPlayer(playerInput: playerInput!): Players!
+}
+
+type Query {
+  allPlayers: [Players]
+  getPlayers(playerId: ID!): Players
+}
+
+enum team {
+  CSK
+  MI
+  RCB
+  KKR
+}
+
+type Players {
+  id: ID
+  name: String
+  team: team
+  age: Int
+  address: String
+  height: Float
+  email: String
+}
+
+input playerInput {
+  name: String
+  team: team
+  age: Int
+  address: String
+  height: Float
+  email: String
+}
