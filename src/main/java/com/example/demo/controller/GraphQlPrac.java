@@ -36,7 +36,7 @@ public class GraphQlPrac {
         return plyerService.getPlayerById(playerId);
     }
 
-    @QueryMapping
+    @QueryMapping("allPlayers")
     public List<Players> getAll() {
         return plyerService.getAllPlayers();
     }
