@@ -6,7 +6,7 @@ import java.util.Random;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.GraphqlDto.playerInput;
+import com.example.demo.GraphqlDto.PlayerInput;
 import com.example.demo.model.Players;
 import com.example.demo.repo.PlayerRepo;
 
@@ -20,7 +20,7 @@ public class PlyerServiceImpl implements PlyerService {
     }
 
     @Override
-    public Players savePlayer(playerInput input) {
+    public Players savePlayer(PlayerInput input) {
         Players player = new Players();
         player.setName(input.getName());
         player.setTeam(input.getTeam());
