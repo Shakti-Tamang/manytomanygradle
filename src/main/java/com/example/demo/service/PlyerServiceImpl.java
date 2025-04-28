@@ -6,9 +6,11 @@ import java.util.Random;
 import java.util.UUID;
 
 import org.springframework.graphql.data.method.annotation.Argument;
+import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.GraphqlDto.playerInput;
 import com.example.demo.model.Players;
 import com.example.demo.repo.PlayerRepo;
 
@@ -32,8 +34,10 @@ public class PlyerServiceImpl implements PlyerService {
         return random.nextLong(25333,26332);
     }
 
+
+    @MutationMapping("createPlayer")
     @Override
-    public void savePlayer(Players players) {
+    public void savePlayer(@Argument playerInput players) {
 
         try{
      
@@ -46,19 +50,13 @@ public class PlyerServiceImpl implements PlyerService {
 playerRepo.save(players); 
 
         }
-
         catch(Exception ex){
 
             throw new RuntimeException("error"+ex.getMessage());
-
         }
-
     }
-    
-
 
     @QueryMapping("getPlayers")
-
     @Override
     public List<Players> getAllPlayers() {
       
@@ -71,12 +69,8 @@ playerRepo.save(players);
     @Override
     public Players getPlayerById(@Argument Long id) {
         Players player=playerRepo.findById(id).orElse(null);
-
-        return player;
-      
+        return player; 
     }
-    
-
     }
 
 
