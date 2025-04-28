@@ -40,7 +40,7 @@ public ResponseEntity<String> savePlayer(@RequestBody  Players players ) {
 }
 
 
-@GetMapping("/getPlyr")
+@GetMapping("/getPlyr/{id}")
 public ResponseEntity<Players> getPlayer(@PathVariable("id") Long id) {
 
     Players player=plyerService.getPlayerById(id);
