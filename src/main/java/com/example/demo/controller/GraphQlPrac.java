@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
 
-import com.example.demo.GraphqlDto.playerInput;
+import com.example.demo.GraphqlDto.PlayerInput;
 import com.example.demo.model.Players;
 import com.example.demo.service.PlyerService;
 
@@ -24,19 +24,18 @@ public class GraphQlPrac {
         this.plyerService = plyerService;
         log.info("GraphQL Controller initialized");
     }
-
-    @MutationMapping
-    public Players createPlayer(@Argument playerInput playerInput) {
+    @MutationMapping("createPlayer")
+    public Players createPlayer(@Argument("playerInput") PlayerInput playerInput) {
         log.info("Creating player: {}", playerInput.getName());
         return plyerService.savePlayer(playerInput);
     }
 
-    @QueryMapping
-    public Players getPlayer(@Argument Long playerId) {
+    @QueryMapping("getPlayers")
+    public Players getPlayer(@Argument("playerId") Long playerId) {
         return plyerService.getPlayerById(playerId);
     }
 
-    @QueryMapping
+    @QueryMapping("allPlayers")
     public List<Players> getAll() {
         return plyerService.getAllPlayers();
     }

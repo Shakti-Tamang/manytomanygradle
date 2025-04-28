@@ -1,5 +1,5 @@
 type Mutation {
-  createPlayer(playerInput: playerInput!): Players!
+  createPlayer(playerInput: PlayerInput!): Players!
 }
 
 type Query {
@@ -24,7 +24,7 @@ type Players {
   email: String
 }
 
-input playerInput {
+input PlayerInput {
   name: String
   team: team
   age: Int

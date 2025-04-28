@@ -10,18 +10,15 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class playerInput {
+public class PlayerInput {
 
     private String name;
 
-
-
-    @Column(unique = true,nullable = false)
+    @Column(unique = true, nullable = false)
     @Enumerated(EnumType.STRING)
     private Team team;
 
@@ -31,8 +28,6 @@ public class playerInput {
 
     private float height;
 
-
     @Email
     private String email;
-
 }
