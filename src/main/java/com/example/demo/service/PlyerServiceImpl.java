@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.UUID;
 
 import org.springframework.graphql.data.method.annotation.Argument;
@@ -23,17 +24,25 @@ public class PlyerServiceImpl implements PlyerService {
 
     }
 
+    public Long getId(){
+
+        Random random=new Random();
+
+    
+        return random.nextLong(25333,26332);
+    }
+
     @Override
     public void savePlayer(Players players) {
 
         try{
      
-    Long id=Long.parseLong(UUID.randomUUID().toString());
+
     
     // String a="";
 // System.out.println(a.compareTo("skjdksd"));
 
-players.setId(id);
+
 playerRepo.save(players); 
 
         }
@@ -60,13 +69,9 @@ playerRepo.save(players);
 
     @QueryMapping("getPlayers")
     @Override
-    public Players getPlayerById(@Argument int id) {
+    public Players getPlayerById(@Argument Long id) {
         Players player=playerRepo.findById(id).orElse(null);
 
-int a=4;
-int b=90;         
-
-        String result=a>b?"djfjdf":"dhdffd";
         return player;
       
     }
