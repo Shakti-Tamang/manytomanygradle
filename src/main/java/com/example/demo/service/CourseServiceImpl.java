@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
 import org.springframework.stereotype.Service;
 
@@ -52,6 +53,10 @@ public class CourseServiceImpl  implements CourseService{
     @Override
     public void saveCourse(Course course) {
 
+      int b=90;
+
+      b  += b;
+
   List<Student> attachedStudents = new ArrayList<>();
         if(course.getStudentList()!=null){
       for(Student li:course.getStudentList()){
@@ -67,6 +72,14 @@ public class CourseServiceImpl  implements CourseService{
 
     @Override
     public List<Course> getAllCourses() {
+
+      int d=9;
+      int e=9;
+if(d>e);
+      Function<Integer,Integer>list=a->a+5;
+
+      int a=list.apply(4);
+      System.out.println(a);
     List<Course>lists=courseRepo.findAllCourseWithStudent();
     return lists.isEmpty()? new ArrayList<>():lists;
     }
