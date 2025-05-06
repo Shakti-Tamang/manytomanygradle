@@ -10,6 +10,6 @@ public class GraphQLConfig {
     public RuntimeWiringConfigurer runtimeWiringConfigurer() {
         return wiringBuilder -> {
             // Add any custom scalar types if needed
-        };
+        };     
     }
 }
