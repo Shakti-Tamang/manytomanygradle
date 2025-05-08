@@ -35,6 +35,16 @@ import org.springframework.cache.annotation.EnableCaching;
 // set query 
 
 // get predectable result
+
+// ./gradlew clean build
+// gradlew clean build
+// gradle build --refresh-dependencies
+
+// ./gradlew clean build publishToMavenLocal
+
+// ./gradlew bootRun
+
+// ./gradlew dependencies
 @SpringBootApplication
 @EnableCaching
 public class DemoApplication {
