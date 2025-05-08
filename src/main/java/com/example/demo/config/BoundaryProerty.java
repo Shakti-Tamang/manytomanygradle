@@ -3,6 +3,8 @@ package com.example.demo.config;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
+
+
 public class BoundaryProerty {
 
     private String name;
