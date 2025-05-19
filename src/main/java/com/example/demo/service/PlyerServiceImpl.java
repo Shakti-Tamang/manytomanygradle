@@ -21,6 +21,11 @@ public class PlyerServiceImpl implements PlyerService {
 
     @Override
     public Players savePlayer(PlayerInput input) {
+
+
+        String name="Shakti";
+
+
         Players player = new Players();
         player.setName(input.getName());
         player.setTeam(input.getTeam());
