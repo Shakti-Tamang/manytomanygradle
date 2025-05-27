@@ -49,6 +49,16 @@ import org.springframework.cache.annotation.EnableCaching;
 @EnableCaching
 public class DemoApplication {
 
+	
+    // Integer a =50;
+    // Integer b=90;
+
+    // System.out.println(a.compareTo(b));
+// if a is cmaller than b negative -1 
+// if a is greater than b positive +1 
+
+// if equals 0
+
 	public static void main(String[] args) {
 
 SpringApplication.run(DemoApplication.class, args);

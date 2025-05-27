@@ -23,10 +23,19 @@ repositories {
 	mavenCentral()
 }
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
+     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
     implementation 'org.springframework.security:spring-security-config'
+
+    // ✅ Keycloak Admin Client
+    implementation 'org.keycloak:keycloak-admin-client:24.0.4'
+
+    // ✅ Optional: Keycloak Spring Boot Adapter (legacy, use only for compatibility)
+    // Not recommended for new projects. Use OAuth2 instead.
+    // implementation 'org.keycloak:keycloak-spring-boot-starter:24.0.4'
+
+    // ✅ Other dependencies
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.boot:spring-boot-starter-graphql'
@@ -42,6 +51,7 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
 
     runtimeOnly 'org.postgresql:postgresql'
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }

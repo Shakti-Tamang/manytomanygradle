@@ -25,8 +25,23 @@ public class ClassRoomServiceImpl implements ClassRoomService {
 
     @Override
     public void SaveStudentClassRoom(ClassRoom classRoom) {
+// Iterable<String> name=new ArrayList<>();
+// while (name.iterator().hasNext()) {
+    
+// }
 
-        
+// List<String> name=new ArrayList<>();
+
+// while (!name.isEmpty()) {
+    
+// }
+
+// List<Long> name=new ArrayList<>();
+// while (name.iterator().hasNext()) {
+    
+// }
+
+
         List<Student>assignedStudentList=new ArrayList<>();
 
         if(classRoom.getStudents()!=null){
